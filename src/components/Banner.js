@@ -57,10 +57,10 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Hello! My name is Karolina :)</span>
+                <span className="tagline">Hello! My name is Karolina</span>
                 <h1>{`I'm a`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Front-End Dev", "UX/UI Designer", "Graphic Designer" ]'>
                 <span className="wrap">{text}</span></span></h1>
-                  <p>I've been working as a Graphic Designer for over 13 years, and for the past year, I've been developing my skills as a web and app designer using HTML, CSS, JavaScript, and React. Nice to meet you!</p>
+                  <p>I’m a front-end developer with over 13 years of experience in graphic design.<br/> I apply UX/UI design skills to my projects, integrating them with expertise <br/>in React, JavaScript, and HTML/CSS.</p>
                   
           <button onClick={() => console.log('#connect')} >Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
