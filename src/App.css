@@ -247,9 +247,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
-
   padding: 10px;
 }
+
+.banner a {
+  text-decoration: none;
+}
+
 .banner button svg {
   font-size: 25px;
   margin-left: 10px;

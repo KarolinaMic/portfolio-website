@@ -4,16 +4,16 @@ import headerImg from "../assets/img/header-img.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-
+import { HashLink } from 'react-router-hash-link';
 
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
+  const [delta, setDelta] = useState(250);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Front-End Dev", "UX/UI Designer", "Graphic Designer" ];
+  const toRotate = [ "Front-end Dev", "UX/UI Designer", "Graphic Designer" ];
   const period = 2000;
 
   useEffect(() => {
@@ -31,19 +31,15 @@ export const Banner = () => {
 
     setText(updatedText);
 
-    if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2);
-    }
-
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
       setIndex(prevIndex => prevIndex - 1);
-      setDelta(period);
+      setDelta(250);
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setIndex(1);
-      setDelta(500);
+      setDelta(250);
     } else {
       setIndex(prevIndex => prevIndex + 1);
     }
@@ -58,11 +54,15 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Hello! My name is Karolina</span>
-                <h1>{`I'm a`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Front-End Dev", "UX/UI Designer", "Graphic Designer" ]'>
+                <h1>{`I'm a`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Front-end Dev", "UX/UI Designer", "Graphic Designer" ]'>
                 <span className="wrap">{text}</span></span></h1>
                   <p>I’m a front-end developer with over 13 years of experience in graphic design.<br/> I apply UX/UI design skills to my projects, integrating them with expertise <br/>in React, JavaScript, and HTML/CSS.</p>
                   
-          <button onClick={() => console.log('#connect')} >Let’s Connect <ArrowRightCircle size={25} /></button>
+                  <HashLink smooth to="#connect">
+                  <button>
+                   Let’s Connect <ArrowRightCircle size={25} />
+                  </button>
+                  </HashLink>
               </div>}
               
             </TrackVisibility>
