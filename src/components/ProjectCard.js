@@ -20,18 +20,17 @@ export const ProjectCard = ({ title, description, imgUrl }) => {
       </Col>
 
       {/* Modal */}
-      <Modal show={showModal} onHide={handleClose}>
+      <Modal show={showModal} onHide={handleClose} size="lg">
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {/* Tutaj możesz umieścić pełny opis projektu lub inne informacje */}
-          <img src={imgUrl} alt={title} style={{ width: "100%" }} />
+        <img src={imgUrl} alt={title} style={{ width: "100%"}} />
           <p>{description}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Zamknij
+            Close
           </Button>
         </Modal.Footer>
       </Modal>

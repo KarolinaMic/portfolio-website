@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -15,6 +15,7 @@ export const Contact = () => {
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Send');
   const [status, setStatus] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   const onFormUpdate = (category, value) => {
       setFormDetails({
@@ -26,22 +27,15 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: 'Message sent successfully'});
-    } else {
-      setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
-    }
-  };
+    setTimeout(() => {
+      setButtonText("Send");
+      setFormDetails(formInitialDetails);
+      setStatus({ success: true, message: 'Thank you for reaching out, but this is just a test form. Please contact me through GitHub or LinkedIn :)' });
+      setShowModal(true); 
+    }, 2000);
+  };  
+
+  const handleCloseModal = () => setShowModal(false);  
 
   return (
     <section className="contact" id="connect">
@@ -77,12 +71,7 @@ export const Contact = () => {
                       <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
                       <button type="submit"><span>{buttonText}</span></button>
                     </Col>
-                    {
-                      status.message &&
-                      <Col>
-                        <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                      </Col>
-                    }
+                   
                   </Row>
                 </form>
               </div>}
@@ -90,6 +79,19 @@ export const Contact = () => {
           </Col>
         </Row>
       </Container>
+
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Form Status</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p className={status.success === false ? "text-danger" : "text-success"}>{status.message}</p>
+        </Modal.Body>
+        <Modal.Footer>
+        <Button variant="secondary" onClick={handleCloseModal}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+
     </section>
   )
 }

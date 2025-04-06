@@ -2,7 +2,8 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import product from "../assets/img/product.png";
+import abstract from "../assets/img/abstract.png";
 import colorSharp from "../assets/img/color-sharp.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -11,53 +12,23 @@ export const Projects = () => {
   const projects = {
     website: [
       {
-        title: "Business Startup",
-        description: "Design & Development",
+        title: "E-commerce Website",
         imgUrl: projImg1,
       },
       {
-        title: "Website Redesign",
-        description: "UI/UX & Development",
+        title: "Food Delivery App",
         imgUrl: projImg2,
       },
-      {
-        title: "E-commerce Platform",
-        description: "Development & Design",
-        imgUrl: projImg3,
-      },
     ],
-    uxDesign: [
-      {
-        title: "UX Redesign",
-        description: "Research & Design",
-        imgUrl: projImg1,
-      },
-      {
-        title: "Mobile App UX",
-        description: "Design & Testing",
-        imgUrl: projImg2,
-      },
-      {
-        title: "Website UX",
-        description: "Research & Redesign",
-        imgUrl: projImg3,
-      },
-    ],
+    
     graphicDesign: [
       {
-        title: "Logo Design",
-        description: "Branding & Design",
-        imgUrl: projImg1,
+        title: "Product Design",
+        imgUrl: product,
       },
       {
-        title: "Poster Design",
-        description: "Graphics & Layout",
-        imgUrl: projImg2,
-      },
-      {
-        title: "Business Cards",
-        description: "Design & Printing",
-        imgUrl: projImg3,
+        title: "Abstract Art",
+        imgUrl: abstract,
       },
     ],
   };
@@ -75,18 +46,16 @@ export const Projects = () => {
                   <Tab.Container id="projects-tabs" defaultActiveKey="website">
                     <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                       <Nav.Item>
-                        <Nav.Link eventKey="website">Website</Nav.Link>
+                        <Nav.Link eventKey="website">React Projects</Nav.Link>
                       </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="uxDesign">UX Design</Nav.Link>
-                      </Nav.Item>
+                    
                       <Nav.Item>
                         <Nav.Link eventKey="graphicDesign">Graphic Design</Nav.Link>
                       </Nav.Item>
                     </Nav>
                     <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                       <Tab.Pane eventKey="website">
-                        <Row>
+                      <Row className="justify-content-center">
                           {/* Mapowanie projektów dla zakładki Website */}
                           {
                             projects.website.map((project, index) => {
@@ -102,25 +71,9 @@ export const Projects = () => {
                           }
                         </Row>
                       </Tab.Pane>
-                      <Tab.Pane eventKey="uxDesign">
-                        <Row>
-                          {/* Mapowanie projektów dla zakładki UX Design */}
-                          {
-                            projects.uxDesign.map((project, index) => {
-                              return (
-                                <ProjectCard
-                                  key={index}
-                                  title={project.title}
-                                  description={project.description}
-                                  imgUrl={project.imgUrl}
-                                />
-                              );
-                            })
-                          }
-                        </Row>
-                      </Tab.Pane>
+ 
                       <Tab.Pane eventKey="graphicDesign">
-                        <Row>
+                      <Row className="justify-content-center">
                           {/* Mapowanie projektów dla zakładki Graphic Design */}
                           {
                             projects.graphicDesign.map((project, index) => {
