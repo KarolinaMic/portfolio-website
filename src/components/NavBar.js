@@ -5,11 +5,11 @@ import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.png';
 import { HashLink } from 'react-router-hash-link';
 
-
 export const NavBar = () => {
 
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -30,13 +30,14 @@ export const NavBar = () => {
   }
 
   return (
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-        <Container>
+      <Navbar expand="lg" expanded={expanded} onToggle={setExpanded} className={scrolled ? "scrolled" : ""}>
+
+        <Container fluid>
           <Navbar.Brand href="/">
             <img src={logo} alt="Logo"  className="navbar-logo" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)}>
+          <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">

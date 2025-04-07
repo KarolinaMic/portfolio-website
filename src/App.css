@@ -25,6 +25,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden; 
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
@@ -200,6 +205,28 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
+
+.navbar-collapse {
+  background-color: #121212; 
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 9998;
+  }
+
+  nav.navbar {
+    position: relative; 
+  }
+}
+
+
+
 
 /* Banner CSS*/
 
