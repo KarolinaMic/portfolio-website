@@ -3,6 +3,8 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import product from "../assets/img/product.png";
+import ecommerce from "../assets/img/ecommerce.png";
+import ecommerce2 from "../assets/img/ecommerce2.png";
 import abstract from "../assets/img/abstract.png";
 import colorSharp from "../assets/img/color-sharp.png";
 import 'animate.css';
@@ -13,11 +15,11 @@ export const Projects = () => {
     website: [
       {
         title: "E-commerce Website",
-        imgUrl: projImg1,
+        imgUrl: ecommerce,
       },
       {
         title: "Food Delivery App",
-        imgUrl: projImg2,
+        imgUrl: ecommerce2,
       },
     ],
     
@@ -63,7 +65,6 @@ export const Projects = () => {
                                 <ProjectCard
                                   key={index}
                                   title={project.title}
-                                  description={project.description}
                                   imgUrl={project.imgUrl}
                                 />
                               );

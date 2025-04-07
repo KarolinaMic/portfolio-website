@@ -1,4 +1,4 @@
-/*Custom fonts*/
+/*Fonts*/
 @font-face {
   font-family: Centra;
   src: url('./assets/font/CentraNo2-Bold.ttf');
@@ -300,13 +300,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	font-size: 45px;
 	font-weight: 700;
 }
-.skill p { /*nieużywane*/
+.skill p { /*nieużywane, chyba, że chciałabym dodać p*/
     color: #B8B8B8;
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
     margin: 14px 0 75px 0;
 }
+
 .skill-slider {
   width: 100%;
   margin: 0 auto;
@@ -317,8 +318,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 50%;
   margin: 0 auto 15px auto;
 }
-
-
 
 .react-multiple-carousel__arrow--left {
   left: 0px !important;
@@ -539,7 +538,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #000000 !important; 
 }
 
-
 /*Footer*/
 
 .footer {
@@ -624,44 +622,3 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .modal-body-text {
   color: #000000 !important; 
 }
-
-/*
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-*/

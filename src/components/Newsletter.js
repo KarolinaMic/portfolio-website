@@ -14,6 +14,7 @@ export const Newsletter = () => {
       setModalMessage('Thank you for reaching out, but this is just a test form. Please contact me through GitHub or LinkedIn :)');
       setShowModal(true);
       setButtonText('Submit');
+      clearFields();
     }, 2000);
   };
 
