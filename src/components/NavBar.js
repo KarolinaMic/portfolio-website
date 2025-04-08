@@ -32,7 +32,7 @@ export const NavBar = () => {
   return (
       <Navbar expand="lg" expanded={expanded} onToggle={setExpanded} className={scrolled ? "scrolled" : ""}>
 
-        <Container fluid>
+        <Container fluid="md">
           <Navbar.Brand href="/">
             <img src={logo} alt="Logo"  className="navbar-logo" />
           </Navbar.Brand>
