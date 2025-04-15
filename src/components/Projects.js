@@ -16,6 +16,7 @@ export const Projects = () => {
       {
         title: "E-commerce Website",
         imgUrl: ecommerce,
+        link: "https://wearly-shop-project-ecommerce.vercel.app/",
       },
       {
         title: "Food Delivery App",
@@ -66,6 +67,8 @@ export const Projects = () => {
                                   key={index}
                                   title={project.title}
                                   imgUrl={project.imgUrl}
+                                  link={project.link}
+                                
                                 />
                               );
                             })
