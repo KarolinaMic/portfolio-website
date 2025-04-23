@@ -18,15 +18,32 @@ export const ProjectCard = ({ title, description, imgUrl, link }) => {
   return (
     <>
       <Col xs={12} sm={4} lg={4}>
-        <div className="proj-imgbx" onClick={handleClick} style={{ cursor: "pointer" }}>
-          <img src={imgUrl} alt={title} />
-          <div className="proj-txtx">
-            <h4>{title}</h4>
-            <span>{description}</span>
+        {link ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="proj-imgbx"
+            style={{ display: "block", textDecoration: "none", color: "black" }}
+          >
+            <img src={imgUrl} alt={title} />
+            <div className="proj-txtx">
+              <h4>{title}</h4>
+              <span>{description}</span>
+            </div>
+          </a>
+        ) : (
+          <div className="proj-imgbx" onClick={handleShow} style={{ cursor: "pointer" }}>
+            <img src={imgUrl} alt={title} />
+            <div className="proj-txtx">
+              <h4>{title}</h4>
+              <span>{description}</span>
+            </div>
           </div>
-        </div>
+        )}
       </Col>
 
+      {/* Modal tylko dla projektów bez linku */}
       {!link && (
         <Modal show={showModal} onHide={handleClose} size="lg">
           <Modal.Header closeButton>
