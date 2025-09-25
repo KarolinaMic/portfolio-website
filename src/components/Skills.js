@@ -8,6 +8,8 @@ import figma from "../assets/img/figma.png";
 import chatgpt from "../assets/img/chatgpt.png";
 import aftereffect from "../assets/img/aftereffect.png";
 import lightroom from "../assets/img/lightroom.png";
+import sql from "../assets/img/sql.png";
+import python from "../assets/img/python.png";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import arrow1 from "../assets/img/arrow1.svg";
@@ -56,6 +58,14 @@ export const Skills = () => {
                                 <h5>HTML/CSS</h5>
                             </div>
                             <div className="item">
+                                <img src={sql} alt="Image" />
+                                <h5>SQL</h5>
+                            </div>
+                            <div className="item">
+                                <img src={python} alt="Image" />
+                                <h5>Python</h5>
+                            </div>
+                            <div className="item">
                                 <img src={figma} alt="Image" />
                                 <h5>FIGMA</h5>
                             </div>
@@ -83,6 +93,7 @@ export const Skills = () => {
                                 <img src={lightroom} alt="Image" />
                                 <h5>Adobe Lightroom</h5>
                             </div>
+                            
 
                         </Carousel>
                     </div>
