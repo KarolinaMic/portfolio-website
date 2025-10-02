@@ -19,7 +19,7 @@ export const Projects = () => {
         link: "https://wearly-shop-project-ecommerce.vercel.app/",
       },
       {
-        title: "Food Delivery App",
+        title: "Food Recipe App",
         imgUrl: ecommerce2,
         link: "https://github.com/KarolinaMic/recipe-app",
       },
