@@ -21,7 +21,7 @@ export const Projects = () => {
       {
         title: "Food Recipe App",
         imgUrl: ecommerce2,
-        link: "https://github.com/KarolinaMic/recipe-app",
+        link: "https://youtube.com/shorts/LHNhghj-wrw",
       },
     ],
     
