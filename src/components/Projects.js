@@ -24,7 +24,7 @@ export const Projects = () => {
         imgUrl: ecommerce2,
         link: "https://youtu.be/b_CE7UVeOlM",
       },
-      {
+            {
         title: "Memory Game",
         imgUrl: ecommerce3,
         link: "https://portfolio-kmichajlow.vercel.app/",
@@ -66,49 +66,36 @@ export const Projects = () => {
                     </Nav>
                     <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                       <Tab.Pane eventKey="website">
-                        <Row className="justify-content-center">
-                          {/* Pierwszy projekt */}
-                          <Col xs={12} sm={6} md={4} lg={4}>
-                            <ProjectCard
-                              title={projects.website[0].title}
-                              imgUrl={projects.website[0].imgUrl}
-                              link={projects.website[0].link}
-                            />
-                          </Col>
-
-                          {/* Drugi projekt */}
-                          <Col xs={12} sm={6} md={4} lg={4}>
-                            <ProjectCard
-                              title={projects.website[1].title}
-                              imgUrl={projects.website[1].imgUrl}
-                              link={projects.website[1].link}
-                            />
-                          </Col>
-
-                          {/* Trzeci projekt, zaczyna nowy wiersz */}
-                          <Col xs={12} sm={6} md={4} lg={4}>
-                            <ProjectCard
-                              title={projects.website[2].title}
-                              imgUrl={projects.website[2].imgUrl}
-                              link={projects.website[2].link}
-                            />
-                          </Col>
+                      <Row className="justify-content-center">
+                          {/* Mapowanie projektów dla zakładki Website */}
+                          {
+                            projects.website.map((project, index) => {
+                              return (
+                                <ProjectCard
+                                  key={index}
+                                  title={project.title}
+                                  imgUrl={project.imgUrl}
+                                  link={project.link}
+                                
+                                />
+                              );
+                            })
+                          }
                         </Row>
                       </Tab.Pane>
  
                       <Tab.Pane eventKey="graphicDesign">
-                        <Row className="justify-content-center">
+                      <Row className="justify-content-center">
                           {/* Mapowanie projektów dla zakładki Graphic Design */}
                           {
                             projects.graphicDesign.map((project, index) => {
                               return (
-                                <Col key={index} xs={12} sm={6} md={4} lg={4}>
-                                  <ProjectCard
-                                    title={project.title}
-                                    description={project.description}
-                                    imgUrl={project.imgUrl}
-                                  />
-                                </Col>
+                                <ProjectCard
+                                  key={index}
+                                  title={project.title}
+                                  description={project.description}
+                                  imgUrl={project.imgUrl}
+                                />
                               );
                             })
                           }
