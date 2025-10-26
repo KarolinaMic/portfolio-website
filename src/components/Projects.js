@@ -23,6 +23,11 @@ export const Projects = () => {
         imgUrl: ecommerce2,
         link: "https://youtu.be/b_CE7UVeOlM",
       },
+            {
+        title: "Food Recipe App",
+        imgUrl: ecommerce2,
+        link: "https://youtu.be/b_CE7UVeOlM",
+      },
     ],
     
     graphicDesign: [
@@ -35,6 +40,7 @@ export const Projects = () => {
         imgUrl: abstract,
       },
     ],
+    
   };
 
   return (
