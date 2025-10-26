@@ -5,6 +5,7 @@ import projImg2 from "../assets/img/project-img2.png";
 import product from "../assets/img/product.png";
 import ecommerce from "../assets/img/ecommerce.png";
 import ecommerce2 from "../assets/img/ecommerce2.png";
+import ecommerce3 from "../assets/img/cs.png";
 import abstract from "../assets/img/abstract.png";
 import colorSharp from "../assets/img/color-sharp.png";
 import 'animate.css';
@@ -24,9 +25,9 @@ export const Projects = () => {
         link: "https://youtu.be/b_CE7UVeOlM",
       },
             {
-        title: "Food Recipe App",
-        imgUrl: ecommerce2,
-        link: "https://youtu.be/b_CE7UVeOlM",
+        title: "Memory Game",
+        imgUrl: ecommerce3,
+        link: "https://portfolio-kmichajlow.vercel.app/",
       },
     ],
     
