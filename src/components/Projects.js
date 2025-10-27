@@ -25,7 +25,7 @@ export const Projects = () => {
         link: "https://youtu.be/b_CE7UVeOlM",
       },
             {
-        title: "Memory Game",
+        title: "",
         imgUrl: ecommerce3,
         link: "https://portfolio-kmichajlow.vercel.app/",
       },
