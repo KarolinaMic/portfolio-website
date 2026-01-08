@@ -7,24 +7,20 @@ export const ProjectCard = ({ title, description, imgUrl, link }) => {
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
-  const handleClick = () => {
-    if (link) {
-      window.open(link, "_blank");
-    } else {
-      handleShow();
-    }
-  };
-
   return (
     <>
-      <Col xs={12} sm={4} lg={4}>
+      <Col xs={12} sm={6} lg={4} className="mb-4">
         {link ? (
           <a
             href={link}
             target="_blank"
             rel="noopener noreferrer"
             className="proj-imgbx"
-            style={{ display: "block", textDecoration: "none", color: "black" }}
+            style={{
+              display: "block",
+              textDecoration: "none",
+              color: "black",
+            }}
           >
             <img src={imgUrl} alt={title} />
             <div className="proj-txtx">
@@ -33,7 +29,11 @@ export const ProjectCard = ({ title, description, imgUrl, link }) => {
             </div>
           </a>
         ) : (
-          <div className="proj-imgbx" onClick={handleShow} style={{ cursor: "pointer" }}>
+          <div
+            className="proj-imgbx"
+            onClick={handleShow}
+            style={{ cursor: "pointer" }}
+          >
             <img src={imgUrl} alt={title} />
             <div className="proj-txtx">
               <h4>{title}</h4>
@@ -43,7 +43,6 @@ export const ProjectCard = ({ title, description, imgUrl, link }) => {
         )}
       </Col>
 
-      {/* Modal tylko dla projektów bez linku */}
       {!link && (
         <Modal show={showModal} onHide={handleClose} size="lg">
           <Modal.Header closeButton>
